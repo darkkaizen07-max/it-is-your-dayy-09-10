@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Sweet Seventeen Cimi Chann! 🎉</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+  <!-- Library Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Audio Background -->
+  <audio id="bgMusic" loop>
+    <source src="band-aid.mp4" type="audio/mpeg">
+  </audio>
+
+  <!-- Tombol Musik Melayang -->
+  <button id="musicToggle" class="music-btn" onclick="toggleMusic()">🎵 Putar Musik</button>
+
+  <div class="container">
+    
+    <!-- HALAMAN 1: WELCOME -->
+    <div class="page active" id="page-1">
+      <div class="balloon-container">
+        <span class="balloon">🎈</span>
+        <span class="balloon">🎂</span>
+        <span class="balloon">🎁</span>
+      </div>
+      <h1>Happy Birthday Cimi! </h1>
+      <p class="subtitle">Ada petualangan kecil dan kejutan spesial buat kamu yang lagi <b>SWEET SEVENTEEN</b> nihh! ✨</p>
+      <button class="next-btn" onclick="nextPage(2)">Buka Kejutan 🎁</button>
+    </div>
+
+    <!-- HALAMAN 2: MENU UTAMA (3 PILIHAN) -->
+    <div class="page" id="page-2">
+      <h2>✨ Pilih Menu Spesialmu ✨</h2>
+      <p class="subtitle">Mau lihat-lihat bagian yang mana dulu nih?</p>
+      
+      <div class="menu-container">
+        <button class="menu-card" onclick="nextPage(3)">
+          <span class="menu-icon">📸</span>
+          <span class="menu-title">Album Foto</span>
+          <span class="menu-desc">Kenangan rusuh kita</span>
+        </button>
+        
+        <button class="menu-card" onclick="nextPage(4)">
+          <span class="menu-icon">💌</span>
+          <span class="menu-title">Ucapan</span>
+          <span class="menu-desc">Pesan khusus buat kamu</span>
+        </button>
+        
+        <button class="menu-card" onclick="nextPage(5)">
+          <span class="menu-icon">🎉</span>
+          <span class="menu-title">Surprise!</span>
+          <span class="menu-desc">Tombol confetti sepuasnya</span>
+        </button>
+      </div>
+
+      <div class="btn-group" style="margin-top: 20px;">
+        <button class="prev-btn" onclick="nextPage(1)">Kembali</button>
+      </div>
+    </div>
+
+    <!-- HALAMAN 3: ALBUM FOTO (FOTO DITIMPA / STACKED) -->
+    <div class="page" id="page-3">
+      <h2>📸 Memory Lane Kita</h2>
+      <p class="subtitle">Sentuh atau arahkan kursor ke fotonya ya!</p>
+      
+      <!-- Container Foto Ditimpa -->
+      <div class="stacked-photos">
+        <div class="polaroid p-1" onclick="bringToFront(this)">
+          <img src="foto1.jpg.jpeg" alt="Foto 1">
+          <p>Zaman-zaman rusuh bareng! 😆</p>
+        </div>
+        <div class="polaroid p-2" onclick="bringToFront(this)">
+          <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=300" alt="Foto 2">
+          <p>Tetep akur walau LDR! 🌍</p>
+        </div>
+        <div class="polaroid p-3" onclick="bringToFront(this)">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=300" alt="Foto 3">
+          <p>Stay awesome ya Cimi! ✨</p>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="prev-btn" onclick="nextPage(2)">Menu Utama</button>
+        <button class="next-btn" onclick="nextPage(4)">Lanjut Ucapan ➡️</button>
+      </div>
+    </div>
+
+    <!-- HALAMAN 4: SPECIAL WISHES -->
+    <div class="page" id="page-4">
+      <h2>💌 Pesan Spesial Untukmu</h2>
+      <div class="message-box-pro">
+        <p class="wish-text">
+          "HABEDEE SILMI! 🎉 Happy birthday cimi chann, happy sweet seventeen sill! Semoga semua impianmu tercapai, sehat selaluu, makin sukses, dan lancar semua urusannya. Walaupun udah 3 tahun kita pisah, doa terbaik tetap mengalir dari sini. Intinya HBD and stay awesome! 🥳🥳"
+        </p>
+      </div>
+      
+      <div class="btn-group">
+        <button class="prev-btn" onclick="nextPage(2)">Menu Utama</button>
+        <button class="next-btn" onclick="nextPage(5)">Kejutan Terakhir ➡️</button>
+      </div>
+    </div>
+
+    <!-- HALAMAN 5: SPAM CONFETTI SURPRISE -->
+    <div class="page" id="page-5">
+      <div class="final-icon">🎉🎂👑</div>
+      <h1>HAPPY SWEET SEVENTEEN!</h1>
+      <p class="subtitle">Tombol di bawah ini bisa di-<b>spam</b> sesuka hati buat ngeluarin confetti! Cobain deh 👇</p>
+      
+      <button class="spam-confetti-btn" onclick="triggerSpamConfetti()">🎉 SPAM CONFETTI! 🎉</button>
+
+      <div class="btn-group" style="margin-top: 25px;">
+        <button class="prev-btn" onclick="nextPage(2)">Menu Utama</button>
+        <button class="next-btn" onclick="nextPage(1)">Ulang Dari Awal 🔄</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
